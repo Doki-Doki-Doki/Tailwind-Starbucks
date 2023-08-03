@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.container{
+    max-width: 110rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+@layer components{
+    .header{
+        @apply bg-pink-600 fixed w-full border-solid border-b-2 border-black z-[999]
+    }
+    .header .header__wrapper{
+        @apply flex justify-between items-center
+    }
+    .header .header__wrapper .branding{
+        @apply flex
+    }
+    .header .header__nav{
+        @apply absolute flex flex-col bg-orange-500 
+        top-[5.1rem] pt-[2rem] pl-[2rem] right-[-21.5rem] w-[21.5rem] 
+        h-[100vh] transition-all duration-200 z-[998]
+    }
+    .header .header__nav.open{
+        @apply right-[0rem]
+    }
+    .header .header__wrapper .branding img{
+        @apply w-[3rem]
+    }
+    .header .header__wrapper .toggle__menu{
+        @apply flex flex-col gap-[0.25rem]
+    }
+    .header .header__wrapper .toggle__menu span{
+        @apply block h-[3px] w-[1.4rem] bg-blue-600 rounded-full
+    }
+    .header .header__actions{
+        @apply hidden
+    }
+}
