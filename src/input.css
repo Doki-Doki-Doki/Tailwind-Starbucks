@@ -8,35 +8,116 @@
     margin: 0 auto;
     padding: 1rem;
 }
+.btn{
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border: 1px solid transparent;
+    font-weight: bold;
+}
+.btn.bg--white{
+    @apply bg-white text-black border-[1px] border-black rounded-full
+}
+.btn.bg--white:hover{
+    @apply bg-gray-200
+}
+.btn.bg--black{
+    @apply bg-black text-white border-[1px] border-white rounded-full
+}
+.btn.bg--black:hover{
+    @apply bg-gray-700
+}
 
 @layer components{
     .header{
-        @apply bg-pink-600 fixed w-full border-solid border-b-2 border-black z-[999]
+        @apply bg-white fixed w-full z-[999] shadow-md
+
     }
     .header .header__wrapper{
-        @apply flex justify-between items-center
+        @apply flex justify-between items-center px-[0.5rem]
+        lg:px-[1rem] lg:py-[.5rem]
     }
     .header .header__wrapper .branding{
-        @apply flex
-    }
-    .header .header__nav{
-        @apply absolute flex flex-col bg-orange-500 
-        top-[5.1rem] pt-[2rem] pl-[2rem] right-[-21.5rem] w-[21.5rem] 
-        h-[100vh] transition-all duration-200 z-[998]
-    }
-    .header .header__nav.open{
-        @apply right-[0rem]
+        @apply flex 
+        lg:items-center lg:gap-[2rem]
     }
     .header .header__wrapper .branding img{
         @apply w-[3rem]
     }
+    .header .header__nav{
+        @apply absolute flex flex-col bg-white 
+        top-[5.25rem] pt-[2rem] px-[2rem] right-[-21.5rem] w-[21.5rem] 
+        h-[100vh] transition-all duration-200
+        lg:static lg:flex-row lg:h-[3rem] lg:p-[0]
+    }
+    .header .header__nav.open{
+        @apply right-[0rem]
+    }
+    .header .branding .header__nav__main{
+        @apply border-solid border-b-[2px] border-gray-200
+        lg:flex lg:flex-row lg:items-center lg:border-none lg:gap-[2rem]
+    }
+    .header .branding .header__nav__main li{
+        @apply py-[1rem] font-[450] text-[1.2rem]
+        lg:p-[0] lg:font-bold lg:text-[0.9rem] lg:uppercase
+    }
+    .header .branding .header__nav__main li a:hover{
+        @apply text-green-700 cursor-pointer
+    }
+    .header .branding .header__nav__main #rewards{
+        @apply pb-[2rem]
+        lg:pb-0
+    }
+    .header .branding .header__nav__acts{
+        @apply lg:flex lg:hidden
+    }
+    .header .branding .header__nav__acts li{
+        @apply py-[0.7rem]
+    }
+    .header .branding .header__nav__acts #find{
+        @apply pt-[2rem] pb-[1.3rem]
+    }
+    .header .branding .header__nav__acts #find:hover{
+        @apply text-green-700
+    }
     .header .header__wrapper .toggle__menu{
-        @apply flex flex-col gap-[0.25rem]
+        @apply bg-transparent flex flex-col gap-[0.25rem] p-[1rem] cursor-pointer
+        lg:hidden
+    }
+    .header .header__wrapper .toggle__menu:hover{
+        @apply bg-gray-300 
     }
     .header .header__wrapper .toggle__menu span{
-        @apply block h-[3px] w-[1.4rem] bg-blue-600 rounded-full
+        @apply block h-[2px] w-[20px] bg-gray-600 rounded-full
+    }
+    .header .header__wrapper .toggle__menu span:nth-child(2){
+        @apply transition-all duration-200
+    }
+    .header .header__wrapper .toggle__menu span:first-child{
+        @apply  transition-all duration-200
+    }
+    .header .header__wrapper .toggle__menu span:last-child{
+        @apply  transition-all duration-200
+    }
+    .header .header__wrapper .toggle__menu.open span:nth-child(2){
+        @apply opacity-0
+    }
+    .header .header__wrapper .toggle__menu.open span:first-child{
+        @apply rotate-45 translate-y-[0.25rem] transition-all duration-200
+    }
+    .header .header__wrapper .toggle__menu.open span:last-child{
+        @apply rotate-[135deg] translate-y-[-0.5rem] transition-all duration-200
     }
     .header .header__actions{
         @apply hidden
+        lg:flex lg:items-center lg:gap-[1rem]
+    }
+    .header .header__actions a{
+        @apply lg:text-[14.4px]
+    }
+    .header .header__actions #find2{
+        @apply lg:font-[650] lg:text-[14.4px] lg:mr-[2rem]
+    }
+    .header .header__actions #find2:hover{
+        @apply text-green-700
     }
 }
