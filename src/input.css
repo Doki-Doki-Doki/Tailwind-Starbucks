@@ -124,34 +124,5 @@
 
 
     /*--------STARBS PROMOS--------*/
-    .get .get__wrapper{
-        @apply bg-vlberde flex flex-col gap-[1rem] items-center
-    }
-    .get .get__wrapper h2{
-        @apply font-bold text-[1.5rem] pt-[2.5rem] 
-    }
-    .get .get__wrapper ul{
-        @apply flex justify-center gap-[4rem] pb-[2rem]
-    }
-    .get .get__wrapper ul li{
-        @apply font-bold
-    }
-    .get .get__promo__wrapper{
-        @apply bg-lberde px-[2rem] 
-    }
-    .get .get__promo__text{
-        @apply pb-[3rem]
-    }
-    .get .get__item__content{
-        @apply hidden
-    }
-    .get .get__item__content.active{
-        @apply flex flex-col gap-[1rem]
-    }
-    .get__promo .get__promo__text{
-        @apply text-center
-    }
-    .get__promo .get__promo__text h3{
-        @apply font-bold text-[1.5rem] pb-[1rem]
-    }
+    
 }
