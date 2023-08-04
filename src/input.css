@@ -21,7 +21,7 @@
     @apply bg-gray-200
 }
 .btn.bg--black{
-    @apply bg-black text-white border-[1px] border-white rounded-full
+    @apply bg-black text-white border-[1px] border-black rounded-full
 }
 .btn.bg--black:hover{
     @apply bg-gray-700
@@ -29,95 +29,129 @@
 
 @layer components{
     .header{
-        @apply bg-white fixed w-full z-[999] shadow-md
-
+        background:#ffffff;
+        position:relative;
+        position:fixed;
+        width:100%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
-    .header .header__wrapper{
-        @apply flex justify-between items-center px-[0.5rem]
-        lg:px-[1rem] lg:py-[.5rem]
+    .header .container{
+        @apply lg:p-[.5rem]
     }
-    .header .header__wrapper .branding{
-        @apply flex 
-        lg:items-center lg:gap-[2rem]
+    .header img{
+        @apply w-[2.5rem]
     }
-    .header .header__wrapper .branding img{
-        @apply w-[3rem]
+    .branding{
+        @apply lg:flex lg:items-center
     }
-    .header .header__nav{
-        @apply absolute flex flex-col bg-white 
-        top-[5.25rem] pt-[2rem] px-[2rem] right-[-21.5rem] w-[21.5rem] 
-        h-[100vh] transition-all duration-200
-        lg:static lg:flex-row lg:h-[3rem] lg:p-[0]
+    .header__wrapper{
+        @apply flex items-center justify-between
     }
-    .header .header__nav.open{
-        @apply right-[0rem]
+    .header__actions{
+        @apply hidden lg:flex lg:gap-[1.5rem];
     }
-    .header .branding .header__nav__main{
-        @apply border-solid border-b-[2px] border-gray-200
-        lg:flex lg:flex-row lg:items-center lg:border-none lg:gap-[2rem]
+    .header__nav{
+        @apply bg-puti absolute top-[5.6rem] right-[-100rem] h-[100vh] w-[75%] 
+        px-[2rem] transition-all z-[999] lg:static lg:w-fit lg:h-fit
     }
-    .header .branding .header__nav__main li{
-        @apply py-[1rem] font-[450] text-[1.2rem]
-        lg:p-[0] lg:font-bold lg:text-[0.9rem] lg:uppercase
+    .header__nav.open{
+        @apply right-[0rem] transition-all
     }
-    .header .branding .header__nav__main li a:hover{
-        @apply text-green-700 cursor-pointer
+    .header__nav ul{
+        @apply py-[2rem] flex flex-col gap-[1.5rem] lg:flex-row
     }
-    .header .branding .header__nav__main #rewards{
-        @apply pb-[2rem]
-        lg:pb-0
+    .header__nav ul li a{
+        @apply text-[1.5rem]  lg:text-[1.1rem]
     }
-    .header .branding .header__nav__acts{
-        @apply lg:flex lg:hidden
+    .header__nav ul.nav__top{
+        @apply border-b-[1px] border-semento lg:border-none
     }
-    .header .branding .header__nav__acts li{
-        @apply py-[0.7rem]
+    .header__nav ul.nav__bottom{
+        @apply lg:hidden
     }
-    .header .branding .header__nav__acts #find{
-        @apply pt-[2rem] pb-[1.3rem]
+    .header__nav ul.nav__top li:hover a{
+        @apply text-lasalle
     }
-    .header .branding .header__nav__acts #find:hover{
-        @apply text-green-700
+    .toggle__menu{
+        @apply flex flex-col gap-[.2rem] lg:hidden
     }
-    .header .header__wrapper .toggle__menu{
-        @apply bg-transparent flex flex-col gap-[0.25rem] p-[1rem] cursor-pointer
-        lg:hidden
+    .toggle__menu span{
+        @apply w-[2rem] h-[.2rem] bg-semento block rounded-full
     }
-    .header .header__wrapper .toggle__menu:hover{
-        @apply bg-gray-300 
+    .buhok{
+        @apply h-[100vh] w-[100%] bg-black absolute z-[999] top-[5.6rem] left-[0] opacity-0 transition-all
     }
-    .header .header__wrapper .toggle__menu span{
-        @apply block h-[2px] w-[20px] bg-gray-600 rounded-full
+    .buhok.open{
+        @apply opacity-[.5]  transition-all
     }
-    .header .header__wrapper .toggle__menu span:nth-child(2){
-        @apply transition-all duration-200
+    .kalbo{
+        @apply bg-puti
     }
-    .header .header__wrapper .toggle__menu span:first-child{
-        @apply  transition-all duration-200
+    .kalbo__wrapper{
+        @apply bg-gray-600 py-[2rem]
     }
-    .header .header__wrapper .toggle__menu span:last-child{
-        @apply  transition-all duration-200
+    .kalbo__nav{
+        @apply bg-gray-600 max-w-[25rem] flex flex-wrap gap-[2rem] mx-auto justify-center
     }
-    .header .header__wrapper .toggle__menu.open span:nth-child(2){
-        @apply opacity-0
+    .kalbo__nav li{
+        @apply p-[.5rem] rounded-md text-puti
     }
-    .header .header__wrapper .toggle__menu.open span:first-child{
-        @apply rotate-45 translate-y-[0.25rem] transition-all duration-200
+    .kalbo__nav li.active{
+        @apply bg-blue-500 
     }
-    .header .header__wrapper .toggle__menu.open span:last-child{
-        @apply rotate-[135deg] translate-y-[-0.5rem] transition-all duration-200
-    }
-    .header .header__actions{
+    .kalbo__item__content{
         @apply hidden
-        lg:flex lg:items-center lg:gap-[1rem]
     }
-    .header .header__actions a{
-        @apply lg:text-[14.4px]
+    .kalbo__item__content img{
+        @apply w-[10rem] h-auto rounded-full bg-lasalle px-[1rem]
     }
-    .header .header__actions #find2{
-        @apply lg:font-[650] lg:text-[14.4px] lg:mr-[2rem]
+    .kalbo__item__content.active{
+        @apply flex gap-[2rem] items-center justify-center
     }
-    .header .header__actions #find2:hover{
-        @apply text-green-700
+    .kalbo__desc__wrapper{
+        @apply bg-gray-300 p-[2rem]
+    }
+    .kalbo__text h2{
+        @apply text-[1.5rem] font-bold mb-[2rem]
+    }
+    .kalbo__text table tr{
+        @apply h-[5rem] flex flex-col
+    }
+    .kalbo__text table tr td:first-child{
+        @apply font-semibold
+    }
+    
+
+
+    /*--------STARBS PROMOS--------*/
+    .get .get__wrapper{
+        @apply bg-vlberde flex flex-col gap-[1rem] items-center
+    }
+    .get .get__wrapper h2{
+        @apply font-bold text-[1.5rem] pt-[2.5rem] 
+    }
+    .get .get__wrapper ul{
+        @apply flex justify-center gap-[4rem] pb-[2rem]
+    }
+    .get .get__wrapper ul li{
+        @apply font-bold
+    }
+    .get .get__promo__wrapper{
+        @apply bg-lberde px-[2rem] 
+    }
+    .get .get__promo__text{
+        @apply pb-[3rem]
+    }
+    .get .get__item__content{
+        @apply hidden
+    }
+    .get .get__item__content.active{
+        @apply flex flex-col gap-[1rem]
+    }
+    .get__promo .get__promo__text{
+        @apply text-center
+    }
+    .get__promo .get__promo__text h3{
+        @apply font-bold text-[1.5rem] pb-[1rem]
     }
 }
