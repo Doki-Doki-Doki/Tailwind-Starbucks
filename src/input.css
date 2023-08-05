@@ -83,6 +83,12 @@
     }
     .buhok.open{
         @apply opacity-[.5]  transition-all
+
+
+
+
+
+    /*------KALBO-------*/
     }
     .kalbo{
         @apply bg-puti
@@ -124,5 +130,51 @@
 
 
     /*--------STARBS PROMOS--------*/
+
+    .get{
+        @apply bg-lasalle
+    }
+    .get .get__wrapper{
+        @apply bg-vlberde flex flex-col items-center pt-[2.5rem] font-bold
+    }
+    .get .get__wrapper h2{
+        @apply text-[1.5rem] pb-[1rem]
+    }
+    .get .get__nav{
+        @apply flex
+    }
+    .get .get__nav li{
+        @apply px-[1.3rem] pt-[0.5rem] pb-[1.3rem]
+    }
+    .get .get__nav li.active{
+        @apply bg-yellow-400
+    }
+    .get .get__nav li a{
+        @apply text-[0.6rem]
+    }
+    .get .get__nav li a span{
+        @apply font-semibold text-[1.2rem]
+    }
+    
+    
+
+
+
+    /*gpwrapper*/
+    .get .get__promo__wrapper{
+        @apply bg-lberde px-[1rem] 
+    }
+    .get__item__content{
+        @apply pb-[4.5rem]
+    }
+    .get__item__content img{
+        @apply overflow-x-hidden
+    }
+    .get__promo__text{
+        @apply text-center
+    }
+    .get__promo__text h3{
+        @apply font-semibold text-[1.3rem] py-[1rem]
+    }
     
 }
