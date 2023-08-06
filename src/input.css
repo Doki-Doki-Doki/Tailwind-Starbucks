@@ -135,19 +135,20 @@
         @apply bg-lasalle
     }
     .get .get__wrapper{
-        @apply bg-vlberde flex flex-col items-center pt-[2.5rem] font-bold
+        @apply bg-vlberde flex flex-col items-center pt-[2.5rem] font-bold drop-shadow-lg
     }
     .get .get__wrapper h2{
         @apply text-[1.5rem] pb-[1rem]
+        lg:pb-[3rem]
     }
     .get .get__nav{
         @apply flex
     }
     .get .get__nav li{
-        @apply px-[1.3rem] pt-[0.5rem] pb-[1.3rem]
+        @apply px-[1.3rem] pt-[0.5rem] pb-[1.3rem] border-b-4 border-transparent
     }
     .get .get__nav li.active{
-        @apply bg-yellow-400
+        @apply border-green-700
     }
     .get .get__nav li a{
         @apply text-[0.6rem]
@@ -156,25 +157,32 @@
         @apply font-semibold text-[1.2rem]
     }
     
-    
-
-
-
     /*gpwrapper*/
     .get .get__promo__wrapper{
         @apply bg-lberde px-[1rem] 
     }
     .get__item__content{
-        @apply pb-[4.5rem]
+        @apply py-[2.5rem]
+        lg:pb-[2.5rem] lg:pt-[1.5rem]
     }
     .get__item__content img{
         @apply overflow-x-hidden
+
     }
     .get__promo__text{
-        @apply text-center
+        @apply text-center flex flex-col justify-center
+        lg:text-left
     }
     .get__promo__text h3{
         @apply font-semibold text-[1.3rem] py-[1rem]
+        lg:text-[1.6rem] 
     }
-    
+    .get__item__content{
+        @apply hidden
+    }
+    .get__item__content.active{
+        @apply flex flex-col 
+        lg:flex-row lg:max-w-[60%] lg:mx-auto lg:justify-center lg:gap-[3rem]
+    }
+
 }

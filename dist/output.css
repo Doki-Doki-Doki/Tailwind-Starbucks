@@ -810,6 +810,8 @@ video {
   background-color: rgb(241 248 245 / var(--tw-bg-opacity));
   padding-top: 2.5rem;
   font-weight: 700;
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .get .get__wrapper h2 {
@@ -817,11 +819,19 @@ video {
   font-size: 1.5rem;
 }
 
+@media (min-width: 1024px) {
+  .get .get__wrapper h2 {
+    padding-bottom: 3rem;
+  }
+}
+
 .get .get__nav {
   display: flex;
 }
 
 .get .get__nav li {
+  border-bottom-width: 4px;
+  border-color: transparent;
   padding-left: 1.3rem;
   padding-right: 1.3rem;
   padding-top: 0.5rem;
@@ -829,8 +839,8 @@ video {
 }
 
 .get .get__nav li.active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 204 21 / var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgb(21 128 61 / var(--tw-border-opacity));
 }
 
 .get .get__nav li a {
@@ -852,7 +862,15 @@ video {
 }
 
 .get__item__content {
-  padding-bottom: 4.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .get__item__content {
+    padding-bottom: 2.5rem;
+    padding-top: 1.5rem;
+  }
 }
 
 .get__item__content img {
@@ -860,7 +878,16 @@ video {
 }
 
 .get__promo__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .get__promo__text {
+    text-align: left;
+  }
 }
 
 .get__promo__text h3 {
@@ -870,8 +897,38 @@ video {
   font-weight: 600;
 }
 
+@media (min-width: 1024px) {
+  .get__promo__text h3 {
+    font-size: 1.6rem;
+  }
+}
+
+.get__item__content {
+  display: none;
+}
+
+.get__item__content.active {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .get__item__content.active {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
 .table {
   display: table;
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .transition {
