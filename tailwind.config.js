@@ -10,6 +10,9 @@ module.exports = {
           'semento':'hsl(240,1.51%,50.98%)',
           'lberde':'#d4e9e2',
           'vlberde':'#F1F8F5',
+      },
+      backgroundImage:{
+        'star':"url('../img/rewards/star.png')",
       }
     },
   },

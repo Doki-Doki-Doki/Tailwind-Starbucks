@@ -13,6 +13,7 @@
     padding: 0.3rem 1rem;
     border: 1px solid transparent;
     font-weight: bold;
+    border-radius: 3rem;
 }
 .btn.bg--white{
     @apply bg-white text-black border-[1px] border-black rounded-full
@@ -26,14 +27,26 @@
 .btn.bg--black:hover{
     @apply bg-gray-700
 }
+.btn.bg--green{
+    background: #1E3932;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+.btn.bg--dgreen{
+    background: #00754A;
+    color: #ffffff;
+    border: 1px solid transparent;
+}
 
 @layer components{
+    /*HEADER*/
     .header{
         background:#ffffff;
         position:relative;
         position:fixed;
         width:100%;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        z-index: 9999;
     }
     .header .container{
         @apply lg:p-[.5rem]
@@ -48,11 +61,11 @@
         @apply flex items-center justify-between
     }
     .header__actions{
-        @apply hidden lg:flex lg:gap-[1.5rem];
+        @apply hidden lg:flex lg:gap-[1.5rem] items-center
     }
     .header__nav{
         @apply bg-puti absolute top-[5.6rem] right-[-100rem] h-[100vh] w-[75%] 
-        px-[2rem] transition-all z-[999] lg:static lg:w-fit lg:h-fit
+        px-[2rem] transition-all z-[9999] lg:static lg:w-fit lg:h-fit
     }
     .header__nav.open{
         @apply right-[0rem] transition-all
@@ -63,13 +76,13 @@
     .header__nav ul li a{
         @apply text-[1.5rem]  lg:text-[1.1rem]
     }
-    .header__nav ul.nav__top{
+    .header__nav ul.header__nav__main{
         @apply border-b-[1px] border-semento lg:border-none
     }
-    .header__nav ul.nav__bottom{
+    .header__nav ul.header__nav__acts{
         @apply lg:hidden
     }
-    .header__nav ul.nav__top li:hover a{
+    .header__nav ul.header__nav__main li:hover a{
         @apply text-lasalle
     }
     .toggle__menu{
@@ -78,18 +91,13 @@
     .toggle__menu span{
         @apply w-[2rem] h-[.2rem] bg-semento block rounded-full
     }
-    .buhok{
-        @apply h-[100vh] w-[100%] bg-black absolute z-[999] top-[5.6rem] left-[0] opacity-0 transition-all
-    }
+    /*OVERLAY*/
     .buhok.open{
-        @apply opacity-[.5]  transition-all
-
-
-
+        @apply h-[100vh] w-[100%] bg-black absolute z-[9998] top-[5.6rem] left-[0] opacity-[.5] transition-all
+    }
 
 
     /*------KALBO-------*/
-    }
     .kalbo{
         @apply bg-puti
     }
@@ -126,8 +134,89 @@
     .kalbo__text table tr td:first-child{
         @apply font-semibold
     }
+    /* BANNER */
+    .banner{
+        background-image:url("../img/rewards/star.png");
+        background-size: cover;
+        background-color: #D0EAE4;
+        height: 550px;
+        background-position-y: 15rem;
+        background-repeat: no-repeat;
+        text-align: center;
+
+        @media screen and (min-width: 1024px){
+            background-position-y: 0rem;
+            background-size: contain;
+            background-position-x: 70rem;
+            height: 800px;
+            text-align: unset;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    /*---BANNER----*/
+    .banner .banner__wrapper{
+        @apply px-[5rem] pt-[1rem] text-[1rem] font-normal flex flex-col items-center gap-[1rem]
+        lg:items-start
+    }
+    .banner__wrapper h1{
+        @apply text-[1.6rem] font-semibold w-[15rem]
+        lg:text-[2.5rem] lg:w-[18rem]
+    }
+    .banner__wrapper p{
+        @apply py-[0.5rem] 
+    }
+    .banner__wrapper #join1{
+        @apply px-[1rem] py-[0.25rem] mb-[1rem] mx-auto items-center lg:mr-auto lg:ml-0 lg:my-auto
+    }
+    .banner__wrapper #join2{
+        @apply underline
+    }
+    .banner__wrapper #join2:hover{
+        @apply no-underline
+    }
     
 
+    /*---EASY---*/
+    .easy{
+        @apply py-[2rem]
+    }
+    .easy .easy__wrapper{
+        @apply flex flex-col items-center gap-[3rem]
+    }
+    .easy .easy__top{
+        @apply text-center
+    }
+    .easy .easy__top h2{
+        @apply pb-[1rem] text-[1.5rem] font-semibold
+    }
+    .easy .easy__bottom{
+        @apply flex flex-col
+        lg:flex-row lg:text-center gap-[1rem]
+        lg:gap-[3.5rem]
+    }
+    .easy .easy__step{
+        @apply flex gap-[1rem] pb-[2rem]
+        lg:flex-col lg:w-[20rem]
+    }
+    .easy .easy__step h3{
+        @apply text-[1.2rem] font-semibold pb-[1rem]
+    }
+    .easy .easy__step h4{
+        @apply border-2 border-green-700 rounded-full px-[1rem] py-[0.2rem] 
+        text-lasalle text-[1.4rem] font-semibold mx-auto mb-auto
+        lg:my-auto
+    }
+    .easy .easy__step_text p{
+        @apply text-[0.9rem]
+    }
+    .easy .easy__step__text p a{
+        @apply text-green-800 underline
+    }
+    .easy .easy__step__text p a:hover{
+        @apply no-underline
+    }
 
     /*--------STARBS PROMOS--------*/
 
@@ -136,16 +225,24 @@
     }
     .get .get__wrapper{
         @apply bg-vlberde flex flex-col items-center pt-[2.5rem] font-bold drop-shadow-lg
+        lg:py-[4rem]
     }
     .get .get__wrapper h2{
         @apply text-[1.5rem] pb-[1rem]
         lg:pb-[3rem]
     }
     .get .get__nav{
-        @apply flex
+        @apply flex flex-wrap mx-auto justify-center text-[1rem]
+        lg:font-semibold lg:text-[1.4rem] lg:max-w-[30rem]
     }
     .get .get__nav li{
-        @apply px-[1.3rem] pt-[0.5rem] pb-[1.3rem] border-b-4 border-transparent
+        @apply p-[1.67rem] relative
+    }
+    .get .get__nav li:after{
+        @apply content-[''] w-0 h-[3px] bg-red-500 block absolute bottom-0 left-0 origin-bottom-left ease-in duration-[.5s]
+    }
+    .get .get__nav li.active:after{
+        @apply w-full
     }
     .get .get__nav li.active{
         @apply border-green-700
@@ -158,31 +255,82 @@
     }
     
     /*gpwrapper*/
+    .get .get__promo{
+        @apply lg:h-[18rem]
+    }    
     .get .get__promo__wrapper{
-        @apply bg-lberde px-[1rem] 
+        @apply bg-lberde px-[1rem] h-[400px] relative
+        lg:h-[270px]
     }
     .get__item__content{
-        @apply py-[2.5rem]
-        lg:pb-[2.5rem] lg:pt-[1.5rem]
+        @apply p-[1.5rem] absolute top-[4rem] opacity-0 ease-in duration-300 lg:flex lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:max-w-[50rem] lg:top-[8rem]
+    }
+    .get__item__content.active{
+        @apply top-0 opacity-[1] ease-in duration-[.5s]
     }
     .get__item__content img{
         @apply overflow-x-hidden
-
+        lg:w-[20rem]
     }
     .get__promo__text{
         @apply text-center flex flex-col justify-center
-        lg:text-left
+        lg:text-left lg:max-w-[20rem]
     }
     .get__promo__text h3{
-        @apply font-semibold text-[1.3rem] py-[1rem]
-        lg:text-[1.6rem] 
+        @apply font-semibold text-[1.3rem] pb-[1rem]
+        lg:text-[1.6rem]
     }
     .get__item__content{
-        @apply hidden
+        /* @apply hidden */
     }
-    .get__item__content.active{
+    /* .get__item__content.active{
         @apply flex flex-col 
-        lg:flex-row lg:max-w-[60%] lg:mx-auto lg:justify-center lg:gap-[3rem]
-    }
+        lg:flex-row lg:w-[40%] lg:mx-auto lg:justify-center lg:gap-[3rem]
+    } */
 
+
+    /*---EXTRA---*/
+    .extra .extra__wrapper{
+        @apply flex flex-col px-[0.4rem] py-[2.5rem]
+        lg:py-[4rem] lg:items-center
+    }
+    .extra .extra__top{
+        @apply flex flex-col text-center gap-[1.2rem] pb-[3rem]
+        lg:max-w-[40rem]
+    }
+    .extra .extra__top h2{
+        @apply text-[1.5rem] font-bold
+        lg:text-[1.8rem] lg:font-bold
+    }
+    .extra .extra__top h4{
+        @apply text-[0.95rem] font-normal
+    }
+    .extra__content{
+        @apply flex flex-col gap-[2rem]
+        lg:flex-row lg:max-w-[80rem]
+    }
+    .extra__items{
+        @apply flex gap-[1rem]
+        lg:flex-col lg:items-center lg:gap-[2rem]
+    }
+    .extra__items img{
+        @apply w-[7rem] h-[7rem]
+    }
+    .extra__items__text{
+        @apply text-[0.95rem]
+        lg:text-center
+    }
+    .extra__items__text h3{
+        @apply font-bold
+        lg:text-[1.2rem]
+    }
+    .extra__items__text p{
+        @apply py-[1rem]
+    }
+    .extra__items__text a{
+        @apply text-lasalle font-medium underline
+    }
+    .extra__items__text a:hover{
+        @apply no-underline
+    }
 }

@@ -27,7 +27,7 @@
 
 const getNav = document.querySelectorAll(".get__nav__link");
 const getContent = document.querySelectorAll(".get__item__content");
-const underline = document.querySelectorAll(".get__nav__underline");
+// const underline = document.querySelectorAll(".get__nav__underline");
 
 getNav.forEach((get) => {
     get.addEventListener("click", () => {
