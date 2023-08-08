@@ -534,4 +534,66 @@ h5{
         @apply no-underline
     }
 
+
+
+    /*-----FOOTER-----*/
+    .footer__wrapper{
+        @apply
+        lg:px-[2rem] 
+    }
+    .footer__column a{
+        @apply flex justify-between
+    }
+    .footer__drop{
+        @apply hidden
+    }
+    .footer__drop.open{
+        @apply flex
+    }
+
+    /*content*/
+    .footer__content{
+        @apply flex flex-col gap-[2rem] py-[2rem]
+    }
+    .footer__icons ul{
+        @apply flex gap-[1rem]
+    }
+    .footer__icons ul li a{
+        @apply px-[0.4rem] pt-[0.3rem] pb-[0.2rem] rounded-full bg-black text-puti
+    }
+    .footer__icons ul li:nth-child(2) a{
+        @apply px-[0.6rem]
+    }
+    .footer__icons ul li:nth-child(3) a{
+       @apply px-[0.5rem]
+    }
+    .footer__icons ul li:nth-child(5) a{
+        @apply px-[0.35rem]
+    }
+    .footer__icons ul li:last-child a{
+       @apply px-[0.4rem]
+    }
+    .footer__icons ul li a i{
+        @apply text-[1.2rem]
+    }
+    .footer__privacy ul{
+        @apply flex flex-col gap-[1.2rem]
+        lg:flex-row lg:gap-0
+    }
+    .footer__privacy ul li{
+        @apply 
+        lg:px-[1.5rem] lg:border-r-2 border-gray-400
+    }
+    .footer__privacy ul li:first-child{
+        @apply pl-0
+    }
+    .footer__privacy ul li:last-child{
+        @apply lg:border-r-0
+    }
+    .footer__privacy ul li a:hover{
+        @apply underline
+    }
+    .footer__copyright p{
+        @apply text-[0.85rem] text-gray-400
+    }
 }
