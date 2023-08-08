@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: KanitRegular;
+    src: url("../fonts/AnyConv.com__Kanit-Regular.woff");
+}
+@font-face {
+    font-family: KanitMedium;
+    src: url("../fonts/AnyConv.com__Kanit-Medium.woff");
+}
+
+body{
+    font-family: KanitRegular;
+}
+h5{
+    color: gray;
+    font-family: KanitMedium;
+}
 
 .container{
     max-width: 110rem;
@@ -33,10 +49,14 @@
     border: 1px solid #ffffff;
 }
 .btn.bg--dgreen{
-    background: #00754A;
+    background: #006241;
     color: #ffffff;
     border: 1px solid transparent;
 }
+.btn.bg--dgreen:hover{
+    background: #00754a;
+}
+
 
 @layer components{
     /*HEADER*/
@@ -225,7 +245,7 @@
     }
     .get .get__wrapper{
         @apply bg-vlberde flex flex-col items-center pt-[2.5rem] font-bold drop-shadow-lg
-        lg:py-[4rem]
+        lg:pt-[2.5rem]
     }
     .get .get__wrapper h2{
         @apply text-[1.5rem] pb-[1rem]
@@ -233,7 +253,7 @@
     }
     .get .get__nav{
         @apply flex flex-wrap mx-auto justify-center text-[1rem]
-        lg:font-semibold lg:text-[1.4rem] lg:max-w-[30rem]
+        lg:font-semibold lg:text-[1.4rem] lg:max-w-[35rem]
     }
     .get .get__nav li{
         @apply p-[1.67rem] relative
@@ -290,6 +310,9 @@
 
 
     /*---EXTRA---*/
+    .extra{
+        @apply bg-white
+    }
     .extra .extra__wrapper{
         @apply flex flex-col px-[0.4rem] py-[2.5rem]
         lg:py-[4rem] lg:items-center
@@ -333,4 +356,182 @@
     .extra__items__text a:hover{
         @apply no-underline
     }
+
+
+
+    /*---STARS---*/
+    .stars{
+        @apply bg-diputi
+    }
+    .stars__wrapper{
+        @apply px-[0.4rem] py-[3rem]
+        lg:px-[9rem] lg:py-[2rem]
+    }
+    .stars__title{
+        @apply flex flex-col gap-[1rem] items-center pb-[1rem]
+        lg:max-w-[40rem] lg:mx-auto lg:pb-[2rem]
+    }
+    .stars__title h2{
+        @apply text-[1.5rem] font-bold
+        lg:text-[1.8rem]
+    }
+    .stars__title h4{
+        @apply text-[0.95rem] font-normal text-center
+    }
+    .stars__content{
+        @apply flex flex-col 
+    }
+    .stars__item{
+        @apply flex flex-col gap-[2rem] py-[3rem] border-b-[1px] border-semento border-opacity-20
+        lg:flex-row lg:gap-[3.5rem]
+    }
+    #s-item{
+        @apply border-none pb-[0rem]
+    }
+    .stars__payment{
+        @apply w-[15rem]
+    }
+    .stars__payment h3{
+        @apply text-[1.1rem] font-semibold
+        lg:text-[1.6rem]
+    }
+    .stars__payment h3 span{
+        @apply text-[1rem]
+    }
+    .stars__payment p{
+        @apply text-[0.95rem]
+    }
+    .stars__step{
+        @apply flex gap-[1rem]
+        lg:w-[25rem] lg:gap-[1.1rem]
+    }
+    .stars__step img{
+        @apply w-[7rem]
+    }
+    .stars__step__text{
+        @apply text-[0.95rem] leading-[1.35rem]
+    }
+    .stars__step__text h4{
+        @apply pb-[1rem] font-bold
+        lg:text-[1.2rem]
+    }
+
+
+    /*---REWARDS---*/
+    .rewards{
+        @apply bg-lberde
+        lg:bg-sbbg lg:p-[2rem]
+    }
+    .rewards__wrapper{
+        @apply flex flex-col gap-[0.5rem]
+        lg:flex-row lg:justify-center lg:items-center lg:gap-[8rem] lg:py-[2.5rem] lg:bg-lberde
+    }
+    .rewards__small-1 img{
+        @apply mr-[auto]
+        lg:hidden
+    }
+    .rewards__stars-1 img{
+        @apply hidden
+        lg:flex lg:h-[33rem]
+    }
+    .rewards__stars-2 img{
+        @apply hidden
+        lg:flex lg:h-[33rem]
+    }
+    .rewards__small-2 img{
+        @apply ml-[auto]
+        lg:hidden
+    }
+    .rewards__content{
+        @apply flex flex-col gap-[2rem] items-center text-center px-[1.3rem] leading-[1.35rem]
+        lg:px-0 lg:max-w-[35rem]
+    }
+    .rewards__title h2{
+        @apply text-[1.5rem] font-bold pb-[1rem]
+        lg:text-[1.8rem] lg:pb-[1.8rem]
+    }
+    .rewards__title p{
+        @apply text-[0.95rem]
+    }
+    .rewards__items img{
+        @apply w-[12rem] mx-auto
+    }
+    .rewards__items p{
+        @apply pt-[0.5rem] pb-[1.5rem] text-[0.95rem]
+        lg:pt-[0.75rem]
+    }
+    .rewards__items p a{
+        @apply text-lasalle underline
+    }
+    .rewards__items p a:hover{
+        @apply no-underline
+    }
+
+
+
+    /*-----QUESTION-----*/
+    .question__wrapper{
+        @apply flex flex-col py-[3rem] gap-[1rem]
+        lg:py-[6rem] lg:pl-[25rem] lg:pr-[43rem]
+    }
+    .question__wrapper h2{
+        @apply text-[1.5rem] font-bold
+        lg:text-[1.8rem]
+    }
+    .question__wrapper p{
+        @apply text-[0.95rem] pb-[0.9rem]
+    }
+    .question__wrapper p a{
+        @apply text-lasalle
+    }
+    .question__wrapper p a i{
+        @apply text-[0.7rem] no-underline
+    }
+    .question__wrapper p a span{
+        @apply underline
+    }
+    .question__wrapper p a span:hover{
+        @apply no-underline
+    }
+
+
+
+
+    /*-----RESTRICTIONS-----*/
+    .restrictions{
+        @apply bg-fputi py-[1rem] mb-[3rem]
+        lg:py-[2rem]
+    }
+    .restrictions__wrapper{
+        @apply flex flex-col gap-[1.5rem] text-[0.9rem] 
+        lg:px-[9rem]
+    }
+    .restrictions__top{
+        @apply flex flex-col gap-[0.5rem]
+    }
+    .restrictions__items{
+        @apply flex flex-col gap-[1.5rem]
+        lg:flex-row lg:gap-[2rem]
+    }
+    .restrictions__items__left{
+        @apply flex flex-col gap-[0.8rem]
+        lg:w-[50%]
+    }
+    .restrictions__items__right{
+        @apply flex flex-col gap-[0.8rem]
+        lg:w-[50%]
+    }
+    .restrictions__wrapper p a{
+        @apply text-lasalle 
+    }
+    .restrictions__wrapper p a i{
+        @apply text-[0.7rem] no-underline
+    }
+    .restrictions__wrapper p a span{
+        @apply underline
+    }
+    .restrictions__wrapper p a span:hover{
+        @apply no-underline
+    }
+
 }
