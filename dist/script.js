@@ -54,8 +54,7 @@ function removeActiveGetContent() {
     });
 }
 
-
-
+/*-----HEADER------*/
 const headerNav = document.querySelector(".header__nav");
 const toggleMenu = document.querySelector(".toggle__menu");
 const span = document.querySelector("#test");
@@ -68,3 +67,19 @@ toggleMenu.addEventListener('click', () =>{
 toggleMenu.addEventListener('mouseover', () =>{
     span.classList.toggle('open');
 })
+
+
+
+/*-----FOOTER------*/
+const footerClickable = document.querySelectorAll(".footer__column a");
+
+footerClickable.forEach((drop) => {
+    drop.addEventListener('click', () => {
+        drop.nextElementSibling.classList.toggle('open');
+        drop.querySelector("i").classList.toggle('open');
+    });
+});
+
+
+
+

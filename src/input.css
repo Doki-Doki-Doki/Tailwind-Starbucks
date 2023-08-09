@@ -10,9 +10,14 @@
     font-family: KanitMedium;
     src: url("../fonts/AnyConv.com__Kanit-Medium.woff");
 }
+@font-face {
+    font-family: SodoSansRegular;
+    src: url("../fonts/SoDoSans-Regular.woff");
+}
+
 
 body{
-    font-family: KanitRegular;
+    font-family: SodoSansRegular;
 }
 h5{
     color: gray;
@@ -259,7 +264,7 @@ h5{
         @apply p-[1.67rem] relative
     }
     .get .get__nav li:after{
-        @apply content-[''] w-0 h-[3px] bg-red-500 block absolute bottom-0 left-0 origin-bottom-left ease-in duration-[.5s]
+        @apply content-[''] w-0 h-[3px] bg-lasalle block absolute bottom-0 left-0 origin-bottom-left ease-in duration-[.5s]
     }
     .get .get__nav li.active:after{
         @apply w-full
@@ -326,7 +331,7 @@ h5{
         lg:text-[1.8rem] lg:font-bold
     }
     .extra .extra__top h4{
-        @apply text-[0.95rem] font-normal
+        @apply text-[1rem] font-normal
     }
     .extra__content{
         @apply flex flex-col gap-[2rem]
@@ -340,7 +345,7 @@ h5{
         @apply w-[7rem] h-[7rem]
     }
     .extra__items__text{
-        @apply text-[0.95rem]
+        @apply text-[1rem]
         lg:text-center
     }
     .extra__items__text h3{
@@ -376,7 +381,7 @@ h5{
         lg:text-[1.8rem]
     }
     .stars__title h4{
-        @apply text-[0.95rem] font-normal text-center
+        @apply text-[1rem] font-normal text-center
     }
     .stars__content{
         @apply flex flex-col 
@@ -399,7 +404,7 @@ h5{
         @apply text-[1rem]
     }
     .stars__payment p{
-        @apply text-[0.95rem]
+        @apply text-[1rem]
     }
     .stars__step{
         @apply flex gap-[1rem]
@@ -409,7 +414,7 @@ h5{
         @apply w-[7rem]
     }
     .stars__step__text{
-        @apply text-[0.95rem] leading-[1.35rem]
+        @apply text-[1rem] leading-[1.35rem]
     }
     .stars__step__text h4{
         @apply pb-[1rem] font-bold
@@ -451,13 +456,13 @@ h5{
         lg:text-[1.8rem] lg:pb-[1.8rem]
     }
     .rewards__title p{
-        @apply text-[0.95rem]
+        @apply text-[1rem]
     }
     .rewards__items img{
         @apply w-[12rem] mx-auto
     }
     .rewards__items p{
-        @apply pt-[0.5rem] pb-[1.5rem] text-[0.95rem]
+        @apply pt-[0.5rem] pb-[1.5rem] text-[1rem]
         lg:pt-[0.75rem]
     }
     .rewards__items p a{
@@ -479,7 +484,7 @@ h5{
         lg:text-[1.8rem]
     }
     .question__wrapper p{
-        @apply text-[0.95rem] pb-[0.9rem]
+        @apply text-[1rem] pb-[0.9rem]
     }
     .question__wrapper p a{
         @apply text-lasalle
@@ -503,7 +508,7 @@ h5{
         lg:py-[2rem]
     }
     .restrictions__wrapper{
-        @apply flex flex-col gap-[1.5rem] text-[0.9rem] 
+        @apply flex flex-col gap-[1.8rem] text-[0.9rem] 
         lg:px-[9rem]
     }
     .restrictions__top{
@@ -537,18 +542,52 @@ h5{
 
 
     /*-----FOOTER-----*/
+    .footer{
+        @apply shadow-[20px_0_0_0_rgba(128,128,128,0.7)]
+    }
     .footer__wrapper{
         @apply
-        lg:px-[2rem] 
+        lg:px-[9rem] 
+    }
+    .footer__contacts{
+        @apply border-b-[2px] border-gray-400 pb-[2rem]
+        lg:flex lg:gap-[3rem]
+    }
+    .footer__column{
+        @apply flex flex-col
+        lg:max-w-[14rem]
     }
     .footer__column a{
-        @apply flex justify-between
+        @apply flex justify-between items-center py-[1rem]
     }
-    .footer__drop{
+    .footer__column a p{
+        @apply text-[1.2rem]
+    }
+    .footer__column a i{
+        @apply p-[1rem] bg-transparent
+        lg:hidden
+    }
+    .footer__column a i.open{
+        @apply rotate-180
+    }
+    .footer__column a i:hover{
+        @apply p-[1rem] bg-[#e9e9e9] rounded-full origin-center transition-all duration-100
+    }
+    .footer__column ul{
         @apply hidden
+        lg:flex lg:flex-col text-gray-500
     }
-    .footer__drop.open{
-        @apply flex
+    .footer__column ul li a:hover{
+        @apply lg:text-black
+    }
+    .footer__column ul.open{
+        @apply flex flex-col gap-[1rem] text-[1rem] text-gray-500 transition-all duration-500
+    }
+    .footer__column ul.open li a{
+        @apply py-[0.7rem] 
+    }
+    .footer__column ul.open li a:hover{
+        @apply text-itim
     }
 
     /*content*/
@@ -558,20 +597,32 @@ h5{
     .footer__icons ul{
         @apply flex gap-[1rem]
     }
+    .footer__icons ul span{
+        @apply px-[0.55rem] py-[0.8rem] bg-transparent rounded-full
+    }
+    .footer__icons ul span:hover{
+        @apply px-[0.55rem] py-[0.8rem] bg-[#e9e9e9]
+    }
+    .footer__icons ul span:nth-chid(2){
+        @apply px-[0.7rem] py-[0.8rem]
+    }
     .footer__icons ul li a{
-        @apply px-[0.4rem] pt-[0.3rem] pb-[0.2rem] rounded-full bg-black text-puti
+        @apply px-[0.3rem] pt-[0.3rem] pb-[0.2rem] rounded-full bg-black text-puti
     }
-    .footer__icons ul li:nth-child(2) a{
-        @apply px-[0.6rem]
+    .footer__icons ul span:nth-child(2) li a{
+        @apply px-[0.55rem]
     }
-    .footer__icons ul li:nth-child(3) a{
-       @apply px-[0.5rem]
+    .footer__icons ul span:nth-child(3) li a{
+       @apply px-[0.45rem]
     }
-    .footer__icons ul li:nth-child(5) a{
-        @apply px-[0.35rem]
+    .footer__icons ul span:nth-child(4) li a{
+       @apply px-[0.45rem]
     }
-    .footer__icons ul li:last-child a{
-       @apply px-[0.4rem]
+    .footer__icons ul span:nth-child(5) li a{
+        @apply px-[0.25rem]
+    }
+    .footer__icons ul span:last-child li a{
+       @apply px-[0.35rem]
     }
     .footer__icons ul li a i{
         @apply text-[1.2rem]
