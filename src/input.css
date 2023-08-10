@@ -29,6 +29,9 @@ h5{
     margin: 0 auto;
     padding: 1rem;
 }
+.container2{
+    padding: 6.5rem 0rem 2rem;
+}
 .btn{
     display: inline-block;
     padding: 0.3rem 1rem;
@@ -76,8 +79,8 @@ h5{
     .header .container{
         @apply lg:p-[.5rem]
     }
-    .header img{
-        @apply w-[2.5rem]
+    .header .branding a img{
+        @apply w-[3.5rem]
     }
     .branding{
         @apply lg:flex lg:items-center
@@ -671,4 +674,80 @@ h5{
     .footer__copyright p{
         @apply text-[0.85rem] text-gray-400
     }
+
+
+    /*-----------------  HOME  -------------------*/
+    .container2{
+        @apply lg:p-[1rem] lg:mx-auto lg:max-w-[110rem]
+    }
+    .home__wrapper{
+        @apply flex flex-col gap-[4rem] 
+        lg:pt-[2rem] lg:mx-auto
+    }
+    .home__content{
+        @apply flex flex-col gap-[2rem] 
+    }
+    .home__items{
+        @apply lg:grid lg:grid-cols-2
+    }
+    .home__items:nth-child(odd) img{
+        @apply lg:order-2
+    }
+    .home__items img{
+        @apply object-cover
+    }
+    .home__items__text{
+        @apply flex flex-col justify-center items-center text-center gap-[1.3rem]
+        bg-penk text-tlasalle py-[1.5rem] px-[1.5rem]
+        lg:px-[9rem] lg:gap-[1.5rem]
+    }
+    .home__items__text h1{
+        @apply text-[1.9rem] font-semibold
+        lg:text-[3.5rem] lg:px-[2rem] lg:leading-[4rem]
+    }
+    .home__items__text h2{
+        @apply text-[1.3rem]
+        lg:text-[1.8rem]
+    }
+    .home__items:nth-child(2) .home__items__text{
+        @apply bg-lasalle text-puti
+    }
+    .home__items:nth-child(3) .home__items__text{
+        @apply bg-periwinks text-black
+    }
+    .home__items:nth-child(4) .home__items__text{
+        @apply bg-sbyellow text-tlasalle
+    }
+    .home__items__text .btn{
+        @apply text-[1.3rem]
+    }
+    #homebutton1{
+        @apply text-tlasalle border-tlasalle
+    }
+    #homebutton1:hover{
+        @apply bg-[#de2f6b]
+    }
+    #homebutton2{
+        @apply text-puti border-puti
+    }
+    #homebutton2:hover{
+        @apply bg-tlasalle
+    }
+    #homebutton3{
+        @apply text-black border-black
+    }
+    #homebutton3:hover{
+        @apply bg-purple-400
+    }
+    #homebutton4{
+        @apply text-tlasalle border-tlasalle
+    }
+    #homebutton4:hover{
+        @apply bg-yellow-300
+    }
+    .home__subtitle{
+        @apply px-[1rem] text-[0.8rem] font-light leading-[1.5rem] text-center
+        lg:text-[0.9rem] lg:px-[33.5rem]
+    }
+
 }
